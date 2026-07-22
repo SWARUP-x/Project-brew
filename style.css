@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+htmi {
+    scroll-behavior: smooth;
+}
+
 :root {
     --bg: #facd96;
     --text: #2d2016;
@@ -494,6 +498,7 @@ nav {
     align-items: center;
     pointer-events: none;
     z-index: 999;
+    cursor: default;
 }
 
 .overlay {
@@ -534,7 +539,7 @@ nav {
     display: flex;
     justify-content: space-between;
     color: #2d2016;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .popup-head button {
@@ -548,26 +553,51 @@ nav {
 
 .popup-body {
     display: flex;
-    justify-content: space-between;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .Qr-section {
     border: 1px solid #2d2016;
-    width: 35%;
+    width: 260px;
     height: 300px;
-    transform: translateX(40px);
+    padding: 20px;
     border-radius: 15px;
     border: 1px solid rgba(255, 221, 167, 0.3);
     background: rgba(255, 223, 171, 0.45);
     backdrop-filter: blur(12px);
     box-shadow: 0 10px 20px #705033;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.qr-image {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+    padding: 20px;
+}
+
+.Qr-section p {
+    color: #4b331e;
+    font-size: 1.2rem;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
 .popup-info {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    transform: translateX(-30px);
+    align-items: flex-start;
+    gap: 30px;
 }
 
 .popup-info h3 {
@@ -578,7 +608,7 @@ nav {
 .popup-info p {
     color: #4b331e;
     font-size: 1.2rem;
-    transform: translateY(-40px);
+
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 
@@ -588,18 +618,27 @@ nav {
     color: #2d2016;
     background: transparent;
     padding: 10px;
-    border: none;
+    border: 1px solid var(--coffee);
     border-radius: 20px;
+    padding: 12px 15px;
+    transition: 0.3s;
+    cursor: pointer;
 
 }
 
 .popup-footer {
     position: absolute;
-    bottom: 5px;
-    right: 8px;
+    bottom: 15px;
+    right: 18px;
     color: #2d2016;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+}
+
+.preview-btn:hover {
+    background: var(--coffee);
+    color: #facd96;
+    transform: translateY(-4px);
 }
 
 .hours {

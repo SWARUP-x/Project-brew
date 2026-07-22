@@ -107,10 +107,12 @@ CtaContent.appendChild(Ctabtn)
 
 const popup = document.querySelector(".popup-model")
 const overlay = document.querySelector(".overlay")
+const previewBtn = document.querySelector(".preview-btn");
 
 Ctabtn.addEventListener("click", () => {
     popup.classList.add("active")
     overlay.classList.add("active")
+    previewBtn.classList.add("active")
 
 })
 const closepopup = document.querySelector(".close-btn")
@@ -118,6 +120,7 @@ const closepopup = document.querySelector(".close-btn")
 closepopup.addEventListener("click", () => {
     popup.classList.remove("active")
     overlay.classList.remove("active")
+
 
 })
 const Contactlist = document.querySelector(".contact-list")
@@ -142,3 +145,15 @@ function renderContact(contact) {
     })
 }
 renderContact(contact)
+
+
+previewBtn.addEventListener("click", () => {
+    console.log("clicked")
+    popup.classList.remove("active");
+    setTimeout(() => {
+        document.getElementById("menu").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }, 50);
+});
