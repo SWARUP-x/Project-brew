@@ -26,6 +26,13 @@ nav {
     justify-content: space-between;
     padding: 20px 30px;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 218, 159, 0.45);
 }
 
 .logo {
@@ -49,6 +56,21 @@ nav {
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
     color: var(--text);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a.active {
+    color: #6f4e37;
+    background: #f1ba75;
+    font-weight: 900;
+    padding: 20px;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+    content: "";
+    position: absolute;
 }
 
 .nav-btn {
@@ -58,6 +80,10 @@ nav {
     border: none;
     border-radius: 15px;
     background: #4b331e;
+}
+
+main {
+    padding-top: 80px;
 }
 
 .hero {
@@ -249,15 +275,14 @@ nav {
 }
 
 .btn1:hover {
-    border-radius: 15px;
-    padding: 15px;
+
     background: linear-gradient(90deg, #2d2016, #facd96);
     border: none;
     color: #ffe3c0;
     cursor: pointer;
     position: relative;
     z-index: 2;
-    transform: translateY(-1px);
+    transform: translateY(-3px);
     opacity: 1;
     transition: 0.3s;
     font-family: 'Courier New', Courier, monospace;
@@ -265,17 +290,16 @@ nav {
 }
 
 .btn2:hover {
-    border-radius: 15px;
-    padding: 15px;
+
     background: linear-gradient(90deg, #2d2016, #facd96);
     border: none;
     color: #ffe3c0;
     cursor: pointer;
     position: relative;
     z-index: 2;
-    transform: translateY(-1px);
+    transform: translateY(-3px);
     opacity: 1;
-    transition: 0.3s;
+    transition: all 0.3s ease-in;
     font-family: 'Courier New', Courier, monospace;
 
 }
@@ -458,6 +482,7 @@ nav {
 .gallery-card:hover::before {
     background: rgba(0, 0, 0, .25);
 }
+
 
 .full-menu-cta {
     padding: 40px;
@@ -820,6 +845,28 @@ nav {
 
 .con-info {
     transform: translateY(5px) translateX(-5px);
+}
+
+.about {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.abt-head {
+    color: #2d2016;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    padding: 20px
+}
+
+.abt-para {
+    color: #4b331e;
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-bottom: 20px;
+
 }
 
 .footer-container {

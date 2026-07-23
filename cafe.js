@@ -88,6 +88,7 @@ function renderGallery(gallery) {
 const doubleGallery = gallery.concat(gallery)
 renderGallery(doubleGallery);
 
+
 const MenuCta = document.querySelector(".full-menu-cta")
 const CtaContent = document.createElement("div")
 CtaContent.classList.add("cta-content")
@@ -157,3 +158,50 @@ previewBtn.addEventListener("click", () => {
         });
     }, 50);
 });
+
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    // Home stays active near the top
+    if (window.scrollY < 100) {
+        current = "home";
+    } else {
+
+        // Middle of viewport
+        const middle = window.scrollY + window.innerHeight / 2;
+
+        sections.forEach((section) => {
+            const top = section.offsetTop;
+            const bottom = top + section.offsetHeight;
+
+            if (middle >= top && middle < bottom) {
+                current = section.id;
+            }
+        });
+
+        // If we're at the very bottom of the page,
+        // force About to become active.
+        if (
+            window.innerHeight + window.scrollY >=
+            document.documentElement.scrollHeight - 5
+        ) {
+            current = "about";
+        }
+    }
+
+    navLinks.forEach((link) => {
+        link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${current}`
+        );
+    });
+
+});
+
+sections.forEach((section) => {
+    observer.observe(section)
+})
