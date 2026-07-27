@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollToPlugin);
+
 const menuContainer = document.querySelector(".MENU-cards")
 
 function renderMenu(category) {
@@ -152,27 +154,31 @@ previewBtn.addEventListener("click", () => {
     console.log("clicked")
     popup.classList.remove("active");
     setTimeout(() => {
-        document.getElementById("menu").scrollIntoView({
-            behavior: "smooth",
-            block: "start"
+        gsap.to(window, {
+            duration: 1,
+            ease: "power2.inOut",
+            scrollTo: {
+                y: "#menu",
+                offsetY: 90
+            }
         });
     }, 50);
 });
 
 const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-links a");
+const navLinks = document.querySelectorAll(".nav-links a, .footer-links a");
 
 window.addEventListener("scroll", () => {
 
     let current = "";
 
-    // Home stays active near the top
+
     if (window.scrollY < 100) {
         current = "home";
     } else {
 
         // Middle of viewport
-        const middle = window.scrollY + window.innerHeight / 2;
+        const middle = window.scrollY + window.innerHeight / 3;
 
         sections.forEach((section) => {
             const top = section.offsetTop;
@@ -193,15 +199,31 @@ window.addEventListener("scroll", () => {
         }
     }
 
-    navLinks.forEach((link) => {
+    document.querySelectorAll(".nav-links a").forEach((link) => {
         link.classList.toggle(
             "active",
             link.getAttribute("href") === `#${current}`
         );
     });
 
-});
-
-sections.forEach((section) => {
-    observer.observe(section)
 })
+navLinks.forEach(link => {
+
+    link.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        const target = link.getAttribute("href");
+        console.log("clicked", target);
+        gsap.to(window, {
+            duration: 0.9,
+            scrollTo: {
+                y: target,
+                offsetY: 160
+            },
+            ease: "power2.inOut"
+        });
+
+    });
+
+});

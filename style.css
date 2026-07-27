@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-htmi {
-    scroll-behavior: smooth;
-}
 
 :root {
     --bg: #facd96;
@@ -43,6 +40,20 @@ nav {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 20px #705033;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    color: linear-gradient (to right, #facd96, #4b331e);
+    background: linear-gradient(90deg, #facd96 10%, #4b331e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateY(-2px) scale(1.03);
+    text-shadow: 0 10px 20px rgba(112, 80, 51, .35);
+    filter: brightness(1.08);
+
 }
 
 .nav-links {
@@ -61,10 +72,11 @@ nav {
 }
 
 .nav-links a.active {
-    color: #6f4e37;
-    background: #f1ba75;
+    color: #facd96;
+    background: #705033;
     font-weight: 900;
     padding: 20px;
+    border-radius: 20px;
 }
 
 .nav-links a.active::after {
@@ -92,6 +104,7 @@ main {
     align-items: center;
     padding: 50px 30px;
     height: 100vh - 50px;
+    scroll-margin-top: 80px;
 
 }
 
@@ -113,22 +126,16 @@ main {
     gap: 20px;
 }
 
-.btn1 {
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    color: #facd96;
-    background: #4b331e;
-}
-
+.btn1,
 .btn2 {
-    padding: 10px;
+    padding: 10px 15px;
     border: none;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
     color: #facd96;
     background: #4b331e;
+    cursor: pointer;
+    transition: all 0.25s ease-in;
 }
 
 .hero-img {
@@ -143,6 +150,7 @@ main {
 
 .Menu {
     padding: 70px 30px;
+    scroll-margin-top: 80px;
 }
 
 .sec-Heading {
@@ -176,6 +184,7 @@ main {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 25px;
+    transition: all 0.3s ease;
 }
 
 .MENU-card {
@@ -214,6 +223,13 @@ main {
     margin-bottom: 15px;
     object-fit: cover;
     display: block;
+    transition: all 0.35s ease-in-out;
+}
+
+
+
+.MENU-card:hover .card-img {
+    transform: scale(1.03) rotate(-1.5deg);
 }
 
 .MENU-card h3 {
@@ -244,7 +260,7 @@ main {
 }
 
 .card-btn {
-    margin-top: auto;
+
     border-radius: 15px;
     padding: 10px 15px;
     background: linear-gradient(90deg, #2d2016, #facd96);
@@ -255,8 +271,13 @@ main {
     z-index: 2;
     transform: translateY(15px);
     opacity: 0;
-    transition: 0.3s;
+    transition: all 0.2s ease-in;
     font-family: 'Courier New', Courier, monospace;
+}
+
+.MENU-card:hover .card-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(75, 51, 30, 0.37);
 }
 
 .MENU-card:hover {
@@ -274,39 +295,30 @@ main {
     opacity: 1;
 }
 
-.btn1:hover {
-
-    background: linear-gradient(90deg, #2d2016, #facd96);
-    border: none;
-    color: #ffe3c0;
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-    transform: translateY(-3px);
-    opacity: 1;
-    transition: 0.3s;
-    font-family: 'Courier New', Courier, monospace;
-
-}
-
+.btn1:hover,
 .btn2:hover {
 
     background: linear-gradient(90deg, #2d2016, #facd96);
     border: none;
     color: #ffe3c0;
-    cursor: pointer;
     position: relative;
     z-index: 2;
     transform: translateY(-3px);
     opacity: 1;
     transition: all 0.3s ease-in;
     font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 8px 20px rgba(75, 51, 30, .35);
+    filter: brightness(1.05);
+}
 
+.btn1:active,
+.btn2:active {
+    transform: translateY(-1px) scale(.98);
 }
 
 .Category-btn:hover {
-    transform: translateY(-8px);
-    transition: 0.3s;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
     box-shadow: #705033;
 }
 
@@ -318,12 +330,13 @@ main {
 
 .moments {
     margin-bottom: 30px;
+    scroll-margin-top: 200px;
 }
 
 .moments-bridge {
     width: 45%;
     margin-left: 70px;
-    background: #ffe3c0;
+    background: #facd96;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 10px 20px #705033;
@@ -366,7 +379,16 @@ main {
     color: #4b331e;
     border: 1px solid #4b331e;
     margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
 
+.moments-bridge button:hover {
+    background: #4b331e;
+    color: #ffe3c0;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(75, 51, 30, .4);
+    ;
 }
 
 .gallery-river {
@@ -459,6 +481,8 @@ main {
 
 .gallery-card:hover {
     transform: scale(1.08);
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .18)
 }
 
 .gallery-card:hover .badge {
@@ -512,6 +536,14 @@ main {
     border-radius: 15px;
     background: #4b331e;
     font-size: 1rem;
+    transition: all 0.3s ease-in;
+}
+
+.cta-btn:hover {
+    background: #facd96;
+    color: #2d2016;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(75, 51, 30, .4);
 }
 
 .popup-model {
@@ -664,6 +696,7 @@ main {
     background: var(--coffee);
     color: #facd96;
     transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(75, 51, 30, .38);
 }
 
 .hours {
@@ -750,7 +783,20 @@ main {
     border: 1px solid #2d2016;
     border-radius: 20px;
     margin-bottom: 30px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
 
+}
+
+.find-btn:hover {
+    background: #2d2016;
+    color: #facd96;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(75, 51, 30, .4);
+}
+
+.find-btn:active {
+    transform: translateY(-1px) scale(.98);
 }
 
 .map {
@@ -784,10 +830,15 @@ main {
     transform: translateX(80px);
 }
 
+.contact {
+    scroll-margin-top: 200px;
+}
+
 .contact-container {
     display: grid;
     justify-content: center;
     align-items: center;
+
 }
 
 .contact-head {
