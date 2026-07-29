@@ -21,19 +21,19 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 30px;
+    padding: 15px 20px;
     align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 9999;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(20px);
     background: rgba(255, 218, 159, 0.45);
 }
 
 .logo {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: linear-gradient (to right, #4b331e 50%, #facd96);
     background: linear-gradient(90deg, #4b331e 10%, #facd96);
     background-clip: text;
@@ -75,7 +75,7 @@ nav {
     color: #facd96;
     background: #705033;
     font-weight: 900;
-    padding: 20px;
+    padding: 15px;
     border-radius: 20px;
 }
 
@@ -94,16 +94,14 @@ nav {
     background: #4b331e;
 }
 
-main {
-    padding-top: 80px;
-}
+
 
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 30px;
-    height: 100vh - 50px;
+    padding: 50px 50px;
+    height: calc(100vh);
     scroll-margin-top: 80px;
 
 }
@@ -111,11 +109,13 @@ main {
 .hero-content {
     width: 40%;
     align-items: flex-start;
+    color: #2d2016;
+    margin-left: 10px;
 
 }
 
 .hero-heading {
-    font-size: 2.3em;
+    font-size: 2.2em;
     font-weight: bolder;
     word-spacing: 2px;
 }
@@ -128,7 +128,7 @@ main {
 
 .btn1,
 .btn2 {
-    padding: 10px 15px;
+    padding: 8px 10px;
     border: none;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
@@ -139,7 +139,7 @@ main {
 }
 
 .hero-img {
-    width: 90%;
+    width: 60%;
 }
 
 .hero-img img {
@@ -149,12 +149,13 @@ main {
 }
 
 .Menu {
-    padding: 70px 30px;
+    padding: 40px 20px;
     scroll-margin-top: 80px;
+    margin-left: 20px;
 }
 
 .sec-Heading {
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: bolder;
     word-spacing: 2px;
     color: #2d2016;
@@ -334,7 +335,7 @@ main {
 }
 
 .moments-bridge {
-    width: 45%;
+    width: 40%;
     margin-left: 70px;
     background: #facd96;
     backdrop-filter: blur(10px);
@@ -342,9 +343,9 @@ main {
     box-shadow: 0 10px 20px #705033;
     border: 1px solid #facd96;
     border-radius: 20px;
-    padding: 10px;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     margin: 50px;
     position: relative;
     z-index: 10;
@@ -357,7 +358,7 @@ main {
 }
 
 .moments-bridge h2 {
-    font-size: xx-large;
+    font-size: 2.2rem;
     font-weight: bolder;
     color: #2d2016;
     margin-bottom: 10px;
@@ -374,7 +375,7 @@ main {
     border-radius: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
-    font-size: larger;
+    font-size: 1rem;
     background: transparent;
     color: #4b331e;
     border: 1px solid #4b331e;
@@ -394,7 +395,7 @@ main {
 .gallery-river {
     width: 100%;
     overflow: hidden;
-    margin-top: -380px;
+    margin-top: -330px;
     padding: 40px 0;
     position: relative;
     transition: all 0.3s ease-in;
@@ -413,7 +414,7 @@ main {
 }
 
 .gallery-card {
-    width: 300px;
+    width: 270px;
     flex-shrink: 0;
     max-height: 360px;
     border: 1px solid #705033;
@@ -426,8 +427,8 @@ main {
 }
 
 .gallery-img {
-    width: 300px;
-    height: 230px;
+    width: 270px;
+    height: 200px;
     border-radius: 20px;
     object-fit: cover;
     display: block;
@@ -449,7 +450,7 @@ main {
     display: grid;
     max-width: 50%;
     max-height: fit-content;
-    padding: 12px 16px;
+    padding: 10px 12px;
     border-radius: 15px;
     border: 1px solid rgba(255, 221, 167, 0.3);
     background: rgba(255, 221, 167, 0.45);
@@ -509,14 +510,15 @@ main {
 
 
 .full-menu-cta {
-    padding: 40px;
+    padding: 20px;
+    margin: 40px;
 }
 
 .cta-head {
     color: #2d2016;
     margin-bottom: 20px;
 
-    font-size: 2.5rem;
+    font-size: 2.2rem;
 
 }
 
@@ -524,7 +526,7 @@ main {
     color: #4b331e;
 
     margin-bottom: 30px;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: bolder;
 }
 
@@ -535,7 +537,7 @@ main {
     border: none;
     border-radius: 15px;
     background: #4b331e;
-    font-size: 1rem;
+    font-size: .8rem;
     transition: all 0.3s ease-in;
 }
 
@@ -554,7 +556,7 @@ main {
     justify-content: center;
     align-items: center;
     pointer-events: none;
-    z-index: 999;
+    z-index: 99999;
     cursor: default;
 }
 
@@ -596,7 +598,7 @@ main {
     display: flex;
     justify-content: space-between;
     color: #2d2016;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .popup-head button {
@@ -613,14 +615,15 @@ main {
     gap: 60px;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+
 }
 
 .Qr-section {
     border: 1px solid #2d2016;
-    width: 260px;
-    height: 300px;
-    padding: 20px;
+    width: 40%;
+    height: 250px;
+    margin-top: auto;
+    padding: 10px;
     border-radius: 15px;
     border: 1px solid rgba(255, 221, 167, 0.3);
     background: rgba(255, 223, 171, 0.45);
@@ -630,20 +633,22 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
 
 }
 
-.qr-image {
-    width: 85%;
-    height: 85%;
+.Qr-image img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    padding: 20px;
+    border-radius: 20px;
 }
+
+
 
 .Qr-section p {
     color: #4b331e;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -654,17 +659,17 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 30px;
+    gap: 20px;
 }
 
 .popup-info h3 {
     color: #2d2016;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 .popup-info p {
     color: #4b331e;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -674,10 +679,10 @@ main {
 .preview-btn {
     color: #2d2016;
     background: transparent;
-    padding: 10px;
+    font-size: .8rem;
     border: 1px solid var(--coffee);
     border-radius: 20px;
-    padding: 12px 15px;
+    padding: 10px 10px;
     transition: 0.3s;
     cursor: pointer;
 
@@ -701,7 +706,7 @@ main {
 
 .hours {
     margin: 40px;
-    transform: translateY(30px);
+
     width: 40%;
     height: 350px;
     display: grid;
@@ -713,15 +718,16 @@ main {
 .section-title {
     color: #2d2016;
     margin-bottom: 20px;
-    transform: translateY(-50px);
-    font-size: 2.5rem;
+    margin-top: auto;
+    font-size: 2.2rem;
     padding: 20px
 }
 
 .section-description {
     color: #4b331e;
-    transform: translateY(-60px);
-    padding: 20px;
+    margin-top: auto;
+    margin-bottom: 20px;
+    margin-left: 30px;
     font-size: 1.3rem;
     font-weight: bolder;
 }
@@ -731,14 +737,16 @@ main {
     height: 5px;
     color: #2d2016;
     background: #2d2016;
-    transform: translateY(-50px) translateX(50px);
+    margin-top: auto;
+    margin-left: 50px;
 }
 
 .hours-list {
     color: #2d2016;
-    transform: translateY(-60px);
+    margin-top: auto;
+    margin-bottom: 30px;
     padding: 30px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bolder;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -758,20 +766,21 @@ main {
 
 .loc-info {
     width: 45%;
-    padding: 50px;
+    margin-left: 50px;
+    margin: 40px;
 }
 
 .find-heading {
     color: #2d2016;
     margin-bottom: 10px;
-    font-size: 2.5rem;
-    padding: 20px
+    font-size: 2.2rem;
+    padding: 10px
 }
 
 .find-para {
     color: #4b331e;
     padding: 20px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bolder;
     margin-bottom: 20px;
 }
@@ -779,12 +788,14 @@ main {
 .find-btn {
     color: #2d2016;
     background: transparent;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #2d2016;
     border-radius: 20px;
     margin-bottom: 30px;
     cursor: pointer;
     transition: all 0.25s ease-in-out;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: .8rem;
 
 }
 
@@ -818,8 +829,9 @@ main {
     height: 2px;
     color: #4b331e;
     background: #4b331e;
-    transform: translateX(80px);
+    margin-top: auto;
     margin-bottom: 10px;
+    margin-left: 50px;
 }
 
 .line3 {
@@ -828,6 +840,7 @@ main {
     color: #4b331e;
     background: #4b331e;
     transform: translateX(80px);
+    margin-bottom: 20px;
 }
 
 .contact {
@@ -838,6 +851,8 @@ main {
     display: grid;
     justify-content: center;
     align-items: center;
+    margin: 40px;
+    text-align: center;
 
 }
 
@@ -845,13 +860,13 @@ main {
     color: #2d2016;
     margin-bottom: 20px;
     text-decoration: underline;
-    font-size: 2.5rem;
-    padding: 20px
+    font-size: 2.2rem;
+    margin-top: auto;
 }
 
 .con-para {
     color: #4b331e;
-    padding: 20px;
+    margin-top: auto;
     font-size: 1.5rem;
     font-weight: bolder;
     margin-bottom: 20px;
@@ -902,19 +917,21 @@ main {
     display: grid;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .abt-head {
     color: #2d2016;
     margin-bottom: 20px;
-    font-size: 2.5rem;
-    padding: 20px
+    font-size: 2.2rem;
+    padding: 20px;
+
 }
 
 .abt-para {
     color: #4b331e;
-    padding: 20px;
-    font-size: 1.5rem;
+    margin-top: auto;
+    font-size: 1.3rem;
     font-weight: bolder;
     margin-bottom: 20px;
 
@@ -933,7 +950,7 @@ main {
     margin-bottom: 10px;
     text-align: center;
     font-size: 1.5rem;
-    padding: 20px
+    margin-top: auto;
 }
 
 .footer-links {
