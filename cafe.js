@@ -105,7 +105,7 @@ Ctapara.textContent = "Explore seasonal drinks, exclusive desserts,and our entir
 CtaContent.appendChild(Ctapara)
 const Ctabtn = document.createElement("button")
 Ctabtn.classList.add("cta-btn")
-Ctabtn.textContent = "[ Explore Full Menu → ]"
+Ctabtn.textContent = " Explore Full Menu → "
 CtaContent.appendChild(Ctabtn)
 
 const popup = document.querySelector(".popup-model")
@@ -166,7 +166,7 @@ previewBtn.addEventListener("click", () => {
 });
 
 const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-links a, .footer-links a");
+const navLinks = document.querySelectorAll(".nav-links a, .footer-links a,.mobile-nav a");
 
 window.addEventListener("scroll", () => {
 
@@ -177,7 +177,7 @@ window.addEventListener("scroll", () => {
         current = "home";
     } else {
 
-        // Middle of viewport
+
         const middle = window.scrollY + window.innerHeight / 3;
 
         sections.forEach((section) => {
@@ -188,9 +188,6 @@ window.addEventListener("scroll", () => {
                 current = section.id;
             }
         });
-
-        // If we're at the very bottom of the page,
-        // force About to become active.
         if (
             window.innerHeight + window.scrollY >=
             document.documentElement.scrollHeight - 5
@@ -223,6 +220,23 @@ navLinks.forEach(link => {
             },
             ease: "power2.inOut"
         });
+
+    });
+
+});
+const hamburger = document.querySelector(".hamburger");
+const mobileNav = document.querySelector(".mobile-nav");
+
+hamburger.addEventListener("click", () => {
+
+    mobileNav.classList.toggle("active");
+
+});
+document.querySelectorAll(".mobile-nav a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        mobileNav.classList.remove("active");
 
     });
 

@@ -5,6 +5,9 @@
 }
 
 
+
+
+
 :root {
     /* Backgrounds */
     --bg: #FACD96;
@@ -46,6 +49,11 @@ body {
     user-select: none;
 }
 
+html {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 
 
 nav {
@@ -59,8 +67,30 @@ nav {
     width: 100%;
     z-index: 9999;
     backdrop-filter: blur(20px);
-    background: rgba(255, 218, 159, 0.45);
+    background: rgba(253, 214, 152, 0.45);
 }
+
+.desk-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.hamburger {
+
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+.mobile-nav {
+
+    display: none;
+
+}
+
 
 .logo {
     font-size: 3rem;
@@ -122,6 +152,8 @@ nav {
     border: none;
     border-radius: 15px;
     background: var(--coffee);
+
+
 }
 
 
@@ -130,7 +162,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 50px;
+    padding: 50px 40px;
     height: calc(100vh);
     scroll-margin-top: 80px;
 
@@ -168,11 +200,15 @@ nav {
     transition: all 0.25s ease-in;
 }
 
-.hero-img {
+.hero-desk-img {
     width: 60%;
 }
 
-.hero-img img {
+.hero-mob-img {
+    display: none;
+}
+
+.hero-desk-img img {
     width: 100%;
     border-radius: 20px;
     box-shadow: var(--coffee);
@@ -186,6 +222,14 @@ nav {
 
 .sec-Heading {
     font-size: 1.4em;
+    font-weight: bolder;
+    word-spacing: 2px;
+    color: var(--text);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.sec-description {
+    font-size: 1.2em;
     font-weight: bolder;
     word-spacing: 2px;
     color: var(--text);
@@ -275,7 +319,7 @@ nav {
     margin-bottom: 5px;
 }
 
-.MENU-card card-price {
+.card-price {
     color: var(--text);
     margin-bottom: 5px;
     font-weight: bold;
@@ -766,7 +810,7 @@ nav {
     width: 550px;
     height: 5px;
     color: var(--text);
-    background: var(--text)6;
+    background: var(--text);
     margin-top: auto;
     margin-left: 50px;
 }
@@ -864,14 +908,7 @@ nav {
     margin-left: 50px;
 }
 
-.line3 {
-    width: 90%;
-    height: 1px;
-    color: var(--coffee);
-    background: var(--coffee);
-    transform: translateX(80px);
-    margin-bottom: 20px;
-}
+
 
 .contact {
     scroll-margin-top: 200px;
@@ -953,7 +990,7 @@ nav {
 .abt-head {
     color: var(--text);
     margin-bottom: 20px;
-    font-size: 2.2rem;
+    font-size: 2rem;
     padding: 20px;
 
 }
@@ -961,7 +998,7 @@ nav {
 .abt-para {
     color: var(--coffee);
     margin-top: auto;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: bolder;
     margin-bottom: 20px;
 
@@ -1003,4 +1040,455 @@ nav {
 .copyright {
     color: var(--text);
     text-align: center;
+}
+
+@media (max-width:768px) {
+    html {
+        margin: 0%;
+    }
+
+    main {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .desk-nav {
+
+        display: none;
+    }
+
+    nav {
+
+        padding: 12px 15px;
+        position: relative;
+
+
+    }
+
+    .logo {
+
+        font-size: 2.2rem;
+        flex-shrink: 0;
+
+    }
+
+    .hamburger {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        font-size: 1.8rem;
+        flex-shrink: 0;
+        margin-left: auto
+    }
+
+    .mobile-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: var(--bg);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+    }
+
+    .mobile-nav.active {
+
+        display: flex;
+    }
+
+    .mobile-nav a {
+
+        text-decoration: none;
+        color: var(--text);
+        font-size: 1.1rem;
+
+
+        width: 100%;
+        text-align: center;
+
+        padding: 12px 0;
+
+        border-radius: 12px;
+
+    }
+
+    .mobile-nav .nav-btn {
+
+        width: 100%;
+        max-width: 220px;
+
+        margin-top: 15px;
+
+    }
+
+
+    .Category-btns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        padding: 10px;
+    }
+
+
+
+
+    .hours {
+        width: clamp(280px, 85vw, 380px);
+        height: auto;
+        margin: clamp(25px, 6vw, 40px) auto;
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 6vw, 2.3rem);
+        line-height: 1.15;
+        text-align: center;
+    }
+
+    .section-description {
+        font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+        line-height: 1.5;
+        margin-left: 0;
+    }
+
+    .hours-list {
+        font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+        padding: clamp(10px, 3vw, 20px);
+    }
+
+    .hour-item {
+        margin-top: clamp(14px, 4vw, 22px);
+        gap: 10px;
+
+    }
+
+    .contact-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .con-card {
+        width: 90%;
+        max-width: 300px;
+        padding: 25px;
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        justify-items: center;
+
+        transform: none;
+    }
+
+    .line2 {
+
+        width: 90%;
+        margin: 20px auto;
+
+    }
+
+    .line {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(8px, 2vw, 10px);
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .hero-tag {
+        text-align: center;
+        max-width: 300px;
+        font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    }
+
+    .hero-heading {
+        font-size: clamp(1.8rem, 7vw, 2.4rem);
+        text-align: start;
+    }
+
+    .hero-description {
+        font-size: clamp(0.9rem, 3.5vw, 1rem);
+        line-height: 1.6;
+    }
+
+    .hero-desk-img {
+        display: none;
+    }
+
+    .hero-mob-img {
+        display: block;
+        width: clamp(250px, 7vw, 760px);
+        max-width: 320px;
+        height: 200px;
+
+    }
+
+    .hero-mob-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 18px;
+    }
+
+
+    .hero-description {
+        text-align: center;
+        max-width: 300px;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .Menu {
+        margin: auto;
+    }
+
+    .MENU-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-items: center;
+    }
+
+    .MENU-card {
+        padding: clamp(16px, 2vw, 24px);
+        border-radius: clamp(16px, 2vw, 20px);
+        width: clamp(250px, 85vw, 330px);
+        max-height: none;
+        background: var(--text-light);
+    }
+
+    .card-img {
+        width: 100%;
+        height: clamp(170px, 20vw, 240px);
+        object-fit: cover;
+        border-radius: clamp(14px, 1.8vw, 18px);
+    }
+
+    .sec-Heading {
+        font-size: clamp(1rem, 6vw, 1.6rem);
+        line-height: 1.1;
+        margin-top: auto;
+    }
+
+    .sec-description {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        line-height: 1.35;
+        max-width: 330px;
+    }
+
+    .Category-btn {
+        font-size: clamp(0.7rem, 3vw, 0.9rem);
+        line-height: 1.25;
+        padding: 8px;
+        word-spacing: 8px;
+    }
+
+    .MENU-card h3 {
+        font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+        line-height: 1.2;
+    }
+
+    .MENU-card p {
+        font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+        line-height: 1.45;
+    }
+
+    .card-price {
+        font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    }
+
+    .cta-head {
+        font-size: clamp(1.8rem, 7vw, 2.2rem);
+        line-height: 1.1;
+        margin-top: auto;
+    }
+
+    .cta-para {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        line-height: 1.35;
+        max-width: 330px;
+    }
+
+    .cta-btn {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+        line-height: 1.25;
+        padding: 8px;
+        color: var(--text-light);
+
+    }
+
+    .gallery-river {
+        margin-top: -320px;
+        padding: 30px 0;
+        margin-bottom: 50px;
+    }
+
+    .gallery-track {
+        gap: 14px;
+    }
+
+    .moments-bridge {
+
+        width: clamp(200px, 82vw, 350px);
+        margin-left: auto;
+        margin-right: auto;
+
+        padding: clamp(24px, 5vw, 40px);
+    }
+
+    .moments-bridge h2 {
+        font-size: clamp(1.9rem, 8vw, 2.7rem);
+        line-height: 1.05;
+    }
+
+    .moments-bridge p {
+        font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+        line-height: 1.5;
+    }
+
+    .moments-bridge button {
+        font-size: clamp(0.85rem, 3vw, 1rem);
+    }
+
+    .find-us {
+        width: 100%;
+        padding: clamp(25px, 6vw, 45px);
+    }
+
+    .find-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(8px, 5vw, 20px);
+    }
+
+    .loc-info {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .find-heading {
+        font-size: clamp(2rem, 8vw, 3rem);
+        line-height: 1.05;
+        text-align: center;
+    }
+
+    .find-para {
+        width: 100%;
+        max-width: 330px;
+        font-size: clamp(1rem, 3.8vw, 1.2rem);
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .map {
+        width: clamp(180px, 55vw, 280px);
+        height: clamp(180px, 55vw, 280px);
+        transform: translateX(0)
+    }
+
+    .find-btn {
+        font-size: clamp(0.85rem, 3vw, 1rem);
+        padding: clamp(10px, 3vw, 14px) clamp(18px, 5vw, 25px);
+    }
+
+    #contact {
+        padding: clamp(auto, 6vw, 45px);
+    }
+
+    #contact .section-title {
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+        line-height: 1.1;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    #contact .section-description {
+        font-size: clamp(0.5rem, 3.5vw, 1rem);
+
+        text-align: center;
+        max-width: 330px;
+        margin: 0 auto;
+    }
+
+    .contact-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(15px, 6vw, 30px);
+    }
+
+    .con-card {
+        width: clamp(220px, 78vw, 330px);
+        height: clamp(100px, 48vw, 230px);
+        padding: clamp(10px, 5vw, 35px);
+    }
+
+    .con-icon {
+        transform: translateX(0);
+    }
+
+    .footer-container {
+        width: clamp(280px, 88vw, 500px);
+        margin: 0 auto;
+        padding: clamp(10px, 5vw, 30px);
+    }
+
+    .brand {
+        font-size: clamp(1rem, 6vw, 1.8rem);
+        margin-bottom: clamp(15px, 4vw, 25px);
+    }
+
+    .footer-links {
+        gap: clamp(8px, 4vw, 15px);
+        font-size: clamp(0.95rem, 3.5vw, 1rem);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-container p {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+        line-height: 1.4;
+        text-align: center;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+
+    .gallery-river {
+        transform: translateY(-70px);
+    }
+
 }
