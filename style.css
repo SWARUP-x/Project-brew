@@ -1492,3 +1492,104 @@ nav {
     }
 
 }
+
+@media (hover: none),
+(pointer: coarse) {
+    .logo:hover {
+        transform: none;
+        filter: none;
+        text-shadow: 0 0 20px #705033;
+        background: linear-gradient(90deg, var(--coffee) 10%, var(--bg));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .MENU-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .MENU-card:hover::before {
+        opacity: 0;
+    }
+
+    .MENU-card:hover .card-img {
+        transform: none;
+    }
+
+    .MENU-card:hover .card-btn {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+    .MENU-card:hover .card-btn:hover {
+        transform: translateY(15px);
+        box-shadow: none;
+    }
+
+    .btn1:hover,
+    .btn2:hover {
+        transform: none;
+        box-shadow: none;
+        filter: none;
+        background: var(--coffee);
+        color: var(--bg);
+    }
+
+    .Category-btn:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .moments-bridge button:hover {
+        background: transparent;
+        color: var(--coffee);
+        transform: none;
+        box-shadow: none;
+    }
+
+    .gallery-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .gallery-card:hover .review-card {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    .gallery-card:hover .badge {
+        transform: none;
+    }
+
+    .gallery-card:hover::before {
+        background: transparent;
+    }
+
+    .gallery-river:has(.gallery-card:hover) .gallery-track {
+        animation-play-state: running;
+    }
+
+    .cta-btn:hover {
+        background: var(--coffee);
+        color: var(--bg);
+        transform: none;
+        box-shadow: none;
+    }
+
+    .preview-btn:hover {
+        background: transparent;
+        color: var(--text);
+        transform: none;
+        box-shadow: none;
+    }
+
+    .find-btn:hover {
+        background: transparent;
+        color: var(--text);
+        transform: none;
+        box-shadow: none;
+    }
+
+}

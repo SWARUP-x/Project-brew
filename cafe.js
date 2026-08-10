@@ -113,6 +113,11 @@ const overlay = document.querySelector(".overlay")
 const previewBtn = document.querySelector(".preview-btn");
 
 Ctabtn.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+        e.preventDefault();
+        window.location.href = "menu.html";
+        return;
+    }
     popup.classList.add("active")
     overlay.classList.add("active")
     previewBtn.classList.add("active")
@@ -241,3 +246,17 @@ document.querySelectorAll(".mobile-nav a").forEach(link => {
     });
 
 });
+document.addEventListener("click", (e) => {
+
+    const menuBtn = e.target.closest(".cta-btn");
+
+    if (!menuBtn) return;
+
+    if (window.innerWidth <= 768) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        window.location.href = "menu.html";
+    }
+
+}, true);
