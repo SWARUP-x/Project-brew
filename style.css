@@ -588,6 +588,8 @@ nav {
     margin: 40px;
 }
 
+
+
 .cta-head {
     color: var(--text);
     margin-bottom: 20px;
@@ -598,21 +600,49 @@ nav {
 
 .cta-para {
     color: var(--coffee);
-
+    max-width: 320px;
     margin-bottom: 30px;
     font-size: 1rem;
     font-weight: bolder;
 }
 
+.cta-btns {
+    display: flex;
+    gap: 18px
+}
+
 .cta-btn {
-    padding: 8px;
+    padding: 8px 8px;
     font-family: 'Courier New', Courier, monospace;
-    color: var(--text-);
+    color: var(--text-light);
     border: none;
     border-radius: 15px;
     background: var(--coffee);
     font-size: .8rem;
     transition: all 0.3s ease-in;
+}
+
+.order-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 8px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: var(--coffee);
+    color: var(--text-light);
+
+    text-decoration: none;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+
+    box-shadow: 0 8px 18px rgba(75, 51, 30, 0.3);
+
+    transition: all 0.3s ease;
 }
 
 .cta-btn:hover {
@@ -1323,6 +1353,16 @@ nav {
 
     .card-price {
         font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    }
+
+    .cta-content {
+        justify-content: center;
+    }
+
+    .order-btn,
+    .cta-btn {
+        width: fit-content;
+        text-align: center;
     }
 
     .cta-head {

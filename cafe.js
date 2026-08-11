@@ -103,10 +103,18 @@ const Ctapara = document.createElement("p")
 Ctapara.classList.add("cta-para")
 Ctapara.textContent = "Explore seasonal drinks, exclusive desserts,and our entire café experience."
 CtaContent.appendChild(Ctapara)
+const Ctabtns = document.createElement("div")
+Ctabtns.classList.add("cta-btns")
+CtaContent.appendChild(Ctabtns)
 const Ctabtn = document.createElement("button")
 Ctabtn.classList.add("cta-btn")
 Ctabtn.textContent = " Explore Full Menu → "
-CtaContent.appendChild(Ctabtn)
+Ctabtns.appendChild(Ctabtn)
+const orderBtn = document.createElement("a")
+orderBtn.classList.add("order-btn")
+orderBtn.textContent = "Order Online →"
+orderBtn.href = "#"
+Ctabtns.appendChild(orderBtn)
 
 const popup = document.querySelector(".popup-model")
 const overlay = document.querySelector(".overlay")

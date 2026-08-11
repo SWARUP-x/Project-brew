@@ -13,37 +13,601 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg: #FACD96;
+            --board: #E8B879;
+            --coffee: #4B331E;
+            --coffee-dark: #2D2016;
+            --coffee-light: #705033;
+            --paper: #FFE3C0;
+            --white: #FAF7F2;
+        }
+
         body {
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #FACD96;
-            color: #2D2016;
+            background: var(--bg);
+            color: var(--coffee-dark);
             font-family: 'Courier New', Courier, monospace;
+            padding: clamp(20px, 5vw, 60px);
+            user-select: none;
+        }
+
+        /* =========================
+           MENU BOARD
+        ========================= */
+
+        .menu-board {
+            width: min(100%, 1000px);
+            margin: auto;
+            padding: clamp(30px, 6vw, 70px);
+
+            position: relative;
+
+            background-color: var(--board);
+
+            /* Gift wrapping paper pattern */
+            background-image:
+                linear-gradient(90deg,
+                    rgba(255, 227, 192, 0.25) 2px,
+                    transparent 2px),
+                linear-gradient(rgba(255, 227, 192, 0.25) 2px,
+                    transparent 2px),
+                linear-gradient(45deg,
+                    transparent 45%,
+                    rgba(75, 51, 30, 0.08) 46%,
+                    rgba(75, 51, 30, 0.08) 54%,
+                    transparent 55%);
+
+            background-size:
+                45px 45px,
+                45px 45px,
+                90px 90px;
+
+            border: 8px solid var(--coffee-dark);
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 12px 0 var(--coffee-dark),
+                0 25px 45px rgba(45, 32, 22, 0.35);
+
+            overflow: hidden;
+        }
+
+        /* Slight paper texture */
+        .menu-board::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(rgba(255, 255, 255, 0.18) 1px,
+                    transparent 1px);
+
+            background-size: 7px 7px;
+
+            opacity: 0.35;
+
+            pointer-events: none;
+        }
+
+        .menu-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: clamp(35px, 6vw, 60px);
+        }
+
+        .menu-header span {
+            display: block;
+            font-size: clamp(0.75rem, 2vw, 1rem);
+            letter-spacing: 5px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .menu-header h1 {
+            font-size: clamp(3rem, 9vw, 6rem);
+            line-height: 0.9;
+            color: var(--coffee-dark);
+            margin-bottom: 18px;
+        }
+
+        .menu-header p {
+            font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+            letter-spacing: 2px;
+        }
+
+        .header-line {
+            width: min(80%, 500px);
+            height: 3px;
+            background: var(--coffee-dark);
+            margin: 25px auto 0;
+        }
+
+        /* =========================
+           MENU GRID
+        ========================= */
+
+        .menu-section {
+            margin-bottom: clamp(35px, 6vw, 60px);
+        }
+
+        .menu-section h2 {
+            font-size: clamp(1.5rem, 4vw, 2.3rem);
+            margin-bottom: 20px;
+
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-section h2::after {
+            content: "";
+            height: 2px;
+            flex: 1;
+            background: var(--coffee-dark);
+        }
+
+        .menu-items {
+            display: grid;
+            gap: 15px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+
+            padding: 10px 0;
+
+            border-bottom: 1px dashed rgba(45, 32, 22, 0.4);
+        }
+
+        .item-info {
+            text-align: left;
+        }
+
+        .item-name {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: clamp(0.75rem, 2vw, 0.9rem);
+            line-height: 1.4;
+            opacity: 0.8;
+        }
+
+        .item-price {
+            flex-shrink: 0;
+            font-weight: bold;
+            font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+        }
+
+        .menu-actions {
+            margin-top: clamp(35px, 6vw, 60px);
+            padding-top: 25px;
+
+            border-top: 2px solid var(--coffee-dark);
+
             text-align: center;
         }
 
-        .menu-placeholder {
-            padding: 30px;
+        .menu-actions p {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            margin-bottom: 18px;
         }
 
-        h1 {
-            font-size: clamp(2rem, 8vw, 4rem);
-            margin-bottom: 15px;
+        .menu-action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
-        p {
-            font-size: clamp(1rem, 3vw, 1.3rem);
+        .menu-action-btn {
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            border: 1px solid var(--coffee-dark);
+            border-radius: 20px;
+
+            color: var(--coffee-dark);
+            text-decoration: none;
+
+            font-family: 'Courier New', Courier, monospace;
+            font-size: clamp(0.75rem, 2vw, 0.95rem);
+
+            transition: 0.3s ease;
+        }
+
+        .menu-action-btn:hover {
+            background: var(--coffee);
+            color: var(--paper);
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .menu-footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 25px;
+
+            border-top: 3px solid var(--coffee-dark);
+        }
+
+        .menu-footer p {
+            font-size: clamp(0.75rem, 2vw, 0.95rem);
+            line-height: 1.6;
+        }
+
+        .menu-footer strong {
+            font-size: 1.1em;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 12px;
+            }
+
+            .menu-board {
+                border-width: 5px;
+                padding: 28px 20px;
+
+                box-shadow:
+                    0 8px 0 var(--coffee-dark),
+                    0 15px 30px rgba(45, 32, 22, 0.3);
+            }
+
+            .menu-header {
+                margin-bottom: 35px;
+            }
+
+            .menu-header h1 {
+                font-size: clamp(2.8rem, 15vw, 4rem);
+            }
+
+            .menu-section h2 {
+                font-size: 1.45rem;
+                gap: 10px;
+            }
+
+            .menu-item {
+                gap: 12px;
+            }
+
+            .item-name {
+                font-size: 0.95rem;
+            }
+
+            .item-description {
+                font-size: 0.72rem;
+            }
+
+            .item-price {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <main class="menu-placeholder">
-        <h1>Your Menu Here ☕</h1>
-        <p>The full menu is coming soon.</p>
+    <main class="menu-board">
+
+        <div class="menu-content">
+
+            <header class="menu-header">
+
+                <span>WELCOME TO</span>
+
+                <h1>BREW</h1>
+
+                <p>EVERY CUP HAS A STORY</p>
+
+                <div class="header-line"></div>
+
+            </header>
+
+
+            <!-- CUSTOMER FAVORITES -->
+
+            <section class="menu-section">
+
+                <h2>Customer Favorites</h2>
+
+                <div class="menu-items">
+
+                    <article class="menu-item">
+
+                        <div class="item-info">
+                            <div class="item-name">
+                                Classic Cappuccino
+                            </div>
+
+                            <div class="item-description">
+                                Rich espresso, steamed milk & silky foam.
+                            </div>
+                        </div>
+
+                        <div class="item-price">₹180</div>
+
+                    </article>
+
+
+                    <article class="menu-item">
+
+                        <div class="item-info">
+                            <div class="item-name">
+                                Spanish Latte
+                            </div>
+
+                            <div class="item-description">
+                                Espresso blended with creamy condensed milk.
+                            </div>
+                        </div>
+
+                        <div class="item-price">₹220</div>
+
+                    </article>
+
+
+                    <article class="menu-item">
+
+                        <div class="item-info">
+                            <div class="item-name">
+                                Iced Americano
+                            </div>
+
+                            <div class="item-description">
+                                Bold espresso served chilled over ice.
+                            </div>
+                        </div>
+
+                        <div class="item-price">₹160</div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- QUICK BITES -->
+
+            <section class="menu-section">
+
+                <h2>Quick Bites</h2>
+
+                <div class="menu-items">
+
+                    <article class="menu-item">
+
+                        <div class="item-info">
+                            <div class="item-name">
+                                Grilled Sandwich
+                            </div>
+
+                            <div class="item-description">
+                                Toasted bread, vegetables & melted cheese.
+                            </div>
+                        </div>
+
+                        <div class="item-price">₹220</div>
+
+                    </article>
+
+
+                    <article class="menu-item">
+
+                        <div class="item-info">
+                            <div class="item-name">
+                                Garlic Bread
+                            </div>
+
+                            <div class="item-description">
+                                Warm toasted bread with garlic butter.
+                            </div>
+                        </div>
+
+                        <div class="item-price">₹150</div>
+
+                    </article>
+
+
+                    <article class="menu-item">
+
+                        <div class="item-info">
+                            <div class="item-name">
+                                Loaded Fries
+                            </div>
+
+                            <div class="item-description">
+                                Crispy fries topped with cheese & herbs.
+                            </div>
+                        </div>
+
+                        <div class="item-price">₹190</div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- SWEET MOMENTS -->
+
+            <section class="menu-section">
+
+                <h2>Sweet Moments</h2>
+
+                <div class="menu-items">
+
+                    <article class="menu-item">
+
+                        <div class="item-info">
+                            <div class="item-name">
+                                Chocolate Brownie
+                            </div>
+
+                            <div class="item-description">
+                                Warm, fudgy chocolate brownie.
+                            </div>
+                        </div>
+
+                        <div class="item-price">₹160</div>
+
+                    </article>
+
+
+                    <article class="menu-item">
+
+                        <div class="item-info">
+                            <div class="item-name">
+                                Classic Cheesecake
+                            </div>
+
+                            <div class="item-description">
+                                Creamy cheesecake with a buttery crust.
+                            </div>
+                        </div>
+
+                        <div class="item-price">₹220</div>
+
+                    </article>
+
+
+                    <article class="menu-item">
+
+                        <div class="item-info">
+                            <div class="item-name">
+                                Butter Croissant
+                            </div>
+
+                            <div class="item-description">
+                                Flaky, buttery & freshly baked.
+                            </div>
+                        </div>
+
+                        <div class="item-price">₹140</div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- SIGNATURE DRINKS -->
+
+            <section class="menu-section">
+
+                <h2>Signature Drinks</h2>
+
+                <div class="menu-items">
+
+                    <article class="menu-item">
+
+                        <div class="item-info">
+                            <div class="item-name">
+                                Caramel Cold Brew
+                            </div>
+
+                            <div class="item-description">
+                                Slow-brewed coffee with caramel sweetness.
+                            </div>
+                        </div>
+
+                        <div class="item-price">₹240</div>
+
+                    </article>
+
+
+                    <article class="menu-item">
+
+                        <div class="item-info">
+                            <div class="item-name">
+                                Mocha Frappe
+                            </div>
+
+                            <div class="item-description">
+                                Chocolate, espresso & creamy blended ice.
+                            </div>
+                        </div>
+
+                        <div class="item-price">₹250</div>
+
+                    </article>
+
+
+                    <article class="menu-item">
+
+                        <div class="item-info">
+                            <div class="item-name">
+                                Berry Iced Tea
+                            </div>
+
+                            <div class="item-description">
+                                Refreshing iced tea with mixed berries.
+                            </div>
+                        </div>
+
+                        <div class="item-price">₹180</div>
+
+                    </article>
+
+                </div>
+
+            </section>
+            <div class="menu-actions">
+
+                <p>Craving something?</p>
+
+                <div class="menu-action-buttons">
+
+                    <a href="#" class="menu-action-btn">
+                        Order Online
+                    </a>
+
+                </div>
+
+            </div>
+
+            <footer class="menu-footer">
+
+                <p>
+                    <strong>BREW</strong><br>
+                    Where Conversations Brew.
+                </p>
+
+                <p>
+                    Please inform our team about any allergies.
+                </p>
+
+            </footer>
+
+        </div>
+
     </main>
 
 </body>
