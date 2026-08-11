@@ -268,3 +268,11 @@ document.addEventListener("click", (e) => {
     }
 
 }, true);
+const reserveBtn = document.querySelector(".nav-btn");
+
+reserveBtn.addEventListener("click", () => {
+    window.open(
+        "https://wa.me/919XXXXXXXXX?text=Hi%2C%20I'd%20like%20to%20reserve%20a%20table.",
+        "_blank"
+    ); console.log("worked")
+});
