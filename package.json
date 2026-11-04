@@ -1,0 +1,20 @@
+{
+  "name": "project-brew",
+  "version": "1.0.0",
+  "description": "A modern cafe website - Brew",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build step required'",
+    "lint": "echo 'No linter configured'"
+  },
+  "keywords": [
+    "cafe",
+    "website",
+    "static"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
